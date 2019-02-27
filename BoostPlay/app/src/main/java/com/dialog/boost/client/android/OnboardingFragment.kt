@@ -1,6 +1,5 @@
 package com.dialog.boost.client.android
 
-
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.ramotion.paperonboarding.PaperOnboardingFragment
 import com.ramotion.paperonboarding.PaperOnboardingPage
-import com.ramotion.paperonboarding.listeners.PaperOnboardingOnRightOutListener
-
 
 
 class OnboardingFragment : Fragment() {
@@ -26,12 +23,12 @@ class OnboardingFragment : Fragment() {
         fragmentTransaction.add(R.id.fragment_container, onBoardingFragment)
         fragmentTransaction.commit()
 
-//        onBoardingFragment.setOnRightOutListener {
-//            val fragmentTransaction = fragmentManager!!.beginTransaction()
-//            val bf = BlankFragment()
-//            fragmentTransaction.replace(R.id.fragment_container, bf)
-//            fragmentTransaction.commit()
-//        }
+        onBoardingFragment.setOnRightOutListener {
+            val newFragmentTransaction = fragmentManager!!.beginTransaction()
+            val bf = LoginFragment()
+            newFragmentTransaction .replace(R.id.fragment_container, bf)
+            newFragmentTransaction .commit()
+        }
 
         return inflater.inflate(R.layout.fragment_onboarding, container, false)
     }

@@ -8,6 +8,16 @@
             android:id="@+id/onboarding_fragment"
             android:name="com.dialog.boost.client.android.OnboardingFragment"
             android:label="Onboarding"
-            tools:layout="@layout/fragment_onboarding"/>
+            tools:layout="@layout/fragment_onboarding">
+            <action
+                    android:id="@+id/action_onboarding_fragment_to_login_fragment"
+                    app:destination="@id/login_fragment"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/login_fragment"
+            android:name="com.dialog.boost.client.android.LoginFragment"
+            android:label="Login"
+            tools:layout="@layout/fragment_login"/>
 
 </navigation>
